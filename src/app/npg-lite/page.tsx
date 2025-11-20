@@ -56,7 +56,7 @@ const NPG_Ble = () => {
     const [recordingElapsedTime, setRecordingElapsedTime] = useState<number>(0); // State to store the recording duration
     const [customTimeInput, setCustomTimeInput] = useState<string>(""); // State to store the custom stop time input
     const existingRecordRef = useRef<any | undefined>(undefined);
-    const samplingrateref = useRef<number>(500);
+    const samplingrateref = useRef<number>(250);
     const recordingStartTimeRef = useRef<number>(0);
     const endTimeRef = useRef<number | null>(null); // Ref to store the end time of the recording
     const canvasElementCountRef = useRef<number>(1);
@@ -331,7 +331,7 @@ const NPG_Ble = () => {
     const CONTROL_CHAR_UUID = "0000ff01-0000-1000-8000-00805f9b34fb";
 
     const SINGLE_SAMPLE_LEN = 7; // Each sample is 10 bytes
-    const BLOCK_COUNT = 10; // 10 samples batched per notification
+    const BLOCK_COUNT = 25; // 10 samples batched per notification
     const NEW_PACKET_LEN = SINGLE_SAMPLE_LEN * BLOCK_COUNT; // 100 bytes
 
 
